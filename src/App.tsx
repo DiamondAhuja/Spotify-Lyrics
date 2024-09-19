@@ -27,10 +27,10 @@ const App = () => {
   const loginToSpotify = () => {
     const clientId = process.env.SPOTIFY_CLIENT_ID; // Stored in environment variables
     const redirectUri =
-      process.env.SPOTIFY_REDIRECT_URI || "http://localhost:1234/callback";
+      process.env.SPOTIFY_REDIRECT_URI || "https://spotify-lyrics-bice.vercel.app/callback";
     const scopes = ["user-read-playback-state", "user-read-currently-playing"];
-
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=${scopes.join(
+  
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scopes.join(
       "%20"
     )}`;
   };
