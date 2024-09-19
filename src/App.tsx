@@ -68,7 +68,7 @@ const App = () => {
     const geniusApiKey = process.env.GENIUS_API_KEY; // Stored in environment variables
     try {
       const { data } = await axios.get(
-        `https://api.genius.com/search?q=${encodeURIComponent(
+        `https://cors-anywhere.herokuapp.com/https://api.genius.com/search?q=${encodeURIComponent(
           trackName
         )} ${encodeURIComponent(artistName)}`,
         {
