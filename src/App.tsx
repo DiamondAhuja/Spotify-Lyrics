@@ -77,6 +77,7 @@ const App = () => {
           },
         }
       );
+      console.log("Genius API response:", data);
       const lyricsPageUrl = data.response.hits[0]?.result.url;
       setLyricsUrl(lyricsPageUrl || null); // Store URL to the lyrics page
     } catch (error) {
